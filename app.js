@@ -13,6 +13,8 @@ const hbs          = require('hbs');
 
 const authRoutes = require ('./routes/auth-routes');
 
+
+
 mongoose.Promise = Promise;
 mongoose
   .connect(process.env.DB || 'mongodb://localhost:27017/project-two', {useNewUrlParser: true, useMongoClient: true})
