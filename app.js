@@ -15,7 +15,7 @@ const authRoutes = require ('./routes/auth-routes');
 
 mongoose.Promise = Promise;
 mongoose
-  .connect(process.env.DB || 'mongodb://localhost:27017/project-two', {useNewUrlParser: true})
+  .connect(process.env.DB, {useNewUrlParser: true, useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
@@ -32,14 +32,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(session({
-  secret: "lab-express-basic-auth",
-  cooke: { maxAge: 60000},
-  store: new MongoStore({
-    mongooseConnection: mongoose.connection,
-    ttl: 24 * 60 * 60
-  })
-}))
 
 // Express View engine setup
 
