@@ -15,7 +15,7 @@ const authRoutes = require ('./routes/auth-routes');
 
 mongoose.Promise = Promise;
 mongoose
-  .connect(process.env.DB, {useNewUrlParser: true, useMongoClient: true})
+  .connect(process.env.DB || 'mongodb://localhost:27017/project-two', {useNewUrlParser: true, useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
@@ -57,7 +57,7 @@ app.use('/contacto', contacto);
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(3000);
+app.listen(PORT);
 
 module.exports = app;
 
