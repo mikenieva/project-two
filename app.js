@@ -15,7 +15,7 @@ const authRoutes = require ('./routes/auth-routes');
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost:27017/project-two', {useNewUrlParser: true})
+  .connect(process.env.DB || 'mongodb://localhost:27017/project-two', {useNewUrlParser: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
