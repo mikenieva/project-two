@@ -55,6 +55,8 @@ app.use('/', index);
 const contacto = require('./routes/contacto');
 app.use('/contacto', contacto);
 
+const PORT = process.env.PORT || 3000;
+
 app.listen(3000);
 
 module.exports = app;
