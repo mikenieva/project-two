@@ -60,6 +60,7 @@ app.use('/contacto', contacto);
 const autenticacion = require('./routes/passportRoutes');
 app.use('/auth', autenticacion);
 
-
+const createProfile = require('./routes/createProfile');
+app.use('/createProfile', createProfile);
 
 module.exports = app;

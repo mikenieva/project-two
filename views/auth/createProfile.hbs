@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+    <title></title>
+  </head>
+
+<body>
+  <div class="row text-center">
+    <div class="col col-10 col-md-4 col-sm-4">
+        <h2 class= "text-center">Paso 1 para completar tu información de usuario</h2>
+    </div>
+  </div>
+
+  <div class="container" style="padding-top:10%">
+    <div class="row">
+      <div class="col col-10 col-md-4 col-sm-4 img-thumbnail ">
+        <div class="profileImage">
+          <img class="profileImage" src="/images/blankProfile.png" width="100%" height="100%" style= "padding-top= 50%">
+        </div>
+      </div>
+      <div class="col col-10 col-md-6 col-sm-6">
+        <form>
+          <div class="form-group">
+            <label for= "Nombre"> Nombre</label>
+            <input type="text" class="form-control" id="Nombre" aria-describedby="NombreHelp" placeholder="Chuchita">
+            <small id= "NombreHelp" class=form-text text-muted> </small>
+          </div>
+
+          <div class="form-group">
+            <label for= "Apellido"> Apellido</label>
+            <input type="text" class="form-control" id="Apellido" aria-describedby="ApellidoHelp" placeholder="Pérez">
+            <small id= "NombreHelp" class=form-text text-muted> </small>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="chuchita@labolsearon.com">
+            <small id="emailHelp" class="form-text text-muted"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Tu fecha de nacimiento no otra vez porfavor">
+          </div>
+
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">No deseo recibir correos con contenido de Proyecto Sanación</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
