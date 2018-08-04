@@ -6,4 +6,9 @@ router.get('/home', (req, res, next) => {
   res.render('auth/home');
 });
 
+/* GET home page */
+router.get('/', (req, res, next) => {
+  res.render('contacto');
+});
+
 module.exports = router;
