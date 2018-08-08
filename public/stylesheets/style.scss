@@ -23,7 +23,7 @@ h2 {
 }
 
 .container {
-  padding-top: 40%;
+  padding-top: 3%;
 }
 
 .img-thumbnail{
@@ -34,4 +34,21 @@ h2 {
 .profilepic {
   padding-top: 15px;
   position:relative;
+}
+
+.div {
+  position: relative;
+  overflow: hidden;
+}
+.input {
+  position: absolute;
+  font-size: 50px;
+  opacity: 0;
+  right: 0;
+  top: 0;
+}
+
+.progress-bar {
+  height: 10px;
+  color: #3b0944;
 }
