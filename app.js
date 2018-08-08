@@ -6,9 +6,11 @@ const logger       = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const mongoose     = require('mongoose');
+const passport     = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
 const favicon      = require('serve-favicon');
-const session    = require("express-session");
-const MongoStore = require("connect-mongo")(session);
+const session      = require("express-session");
+const MongoStore   = require("connect-mongo")(session);
 const hbs          = require('hbs');
 
 const authRoutes = require ('./routes/auth-routes');
@@ -25,6 +27,11 @@ mongoose
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
+const index = require('./routes/index');
+const contacto = require('./routes/contacto');
+const autenticacion = require('./routes/passportRoutes');
+const createProfile = require('./routes/createProfile');
+
 const app = express();
 
 // Middleware Setup
@@ -32,6 +39,11 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(require('express-session')({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: false
+}));
 
 // Express View engine setup
 
@@ -46,20 +58,18 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
-// default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+// Passport Configuration
+const User = require('./models/User');
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
-const index = require('./routes/index');
+// Routing
 app.use('/', index);
-
-const contacto = require('./routes/contacto');
 app.use('/contacto', contacto);
-
-const autenticacion = require('./routes/passportRoutes');
 app.use('/auth', autenticacion);
-
-const createProfile = require('./routes/createProfile');
 app.use('/createProfile', createProfile);
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT);
