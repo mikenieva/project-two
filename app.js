@@ -57,8 +57,13 @@ app.use('/', index);
 const contacto = require('./routes/contacto');
 app.use('/contacto', contacto);
 
-const PORT = process.env.PORT || 3000;
+const autenticacion = require('./routes/passportRoutes');
+app.use('/auth', autenticacion);
 
+const createProfile = require('./routes/createProfile');
+app.use('/createProfile', createProfile);
+
+const PORT = process.env.PORT || 3000;
 app.listen(PORT);
 
 module.exports = app;
