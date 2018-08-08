@@ -10,7 +10,6 @@ const favicon      = require('serve-favicon');
 const session    = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const hbs          = require('hbs');
-const https       = require('https');
 
 const authRoutes = require ('./routes/auth-routes');
 
@@ -34,7 +33,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+const server = http.createServer(this);
 
+
+server.use('/', function(req, res, next) {
+  if(!req.secure) {
+    let secureUrl = "https://" + req.headers['host'] + req.url; 
+    res.writeHead(301, { "Location":  secureUrl });
+    res.end();
+  }
+  next();
+});
 
 
 // Express View engine setup
@@ -66,15 +75,7 @@ const createProfile = require('./routes/createProfile');
 app.use('/createProfile', createProfile);
 
 const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, (req, res, next) => {
-  if(!req.secure) {
-    let secureUrl = "https://" + req.headers['host'] + req.url; 
-    res.writeHead(301, { "Location":  secureUrl });
-    res.end();
-  }
-  next();
-});
+app.listen(PORT);
 
 module.exports = app;
 
