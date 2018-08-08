@@ -13,8 +13,6 @@ const hbs          = require('hbs');
 
 const authRoutes = require ('./routes/auth-routes');
 
-
-
 mongoose.Promise = Promise;
 mongoose
   .connect(process.env.DB || 'mongodb://localhost:27017/project-two', {useNewUrlParser: true, useMongoClient: true})
@@ -34,6 +32,13 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.set('forceSSLOptions', {
+  enable301Redirects: true,
+  trustXFPHeader: false,
+  httpsPort: 443,
+  sslRequiredMessage: 'SSL Required.'
+});
 
 // Express View engine setup
 
