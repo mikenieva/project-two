@@ -12,10 +12,9 @@ const MongoStore = require("connect-mongo")(session);
 const hbs          = require('hbs');
 
 
-
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost:27017/project-two', {useNewUrlParser: true})
+  .connect(`mongodb://miguelnieva:<dbpassword>@ds131621.mlab.com:31621/ironhack-expressproject`, {useNewUrlParser: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
