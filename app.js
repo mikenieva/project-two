@@ -50,7 +50,7 @@ const createProfile = require('./routes/createProfile');
 app.use('/', authRoutes);
 app.use('/signup', createProfile);
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 
 
 
