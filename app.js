@@ -6,7 +6,6 @@ const logger       = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const mongoose     = require('mongoose');
-const favicon      = require('serve-favicon');
 const session    = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const hbs          = require('hbs');
@@ -14,7 +13,7 @@ const hbs          = require('hbs');
 
 mongoose.Promise = Promise;
 mongoose
-  .connect(process.env.DB || 'mongodb://localhost:27017/project-two', {useNewUrlParser: true, useMongoClient: true})
+  .connect(process.env.DB || 'mongodb://localhost:27017/project-two', {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
