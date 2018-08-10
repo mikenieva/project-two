@@ -14,13 +14,14 @@ const hbs          = require('hbs');
 
 mongoose.Promise = Promise;
 mongoose
-  .connect(`mongodb://miguelnieva:<dbpassword>@ds131621.mlab.com:31621/ironhack-expressproject`, {useNewUrlParser: true})
+  .connect(process.env.DB || 'mongodb://localhost:27017/project-two', {useNewUrlParser: true, useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
     console.error('Error connecting to mongo', err)
   });
 
+  
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
