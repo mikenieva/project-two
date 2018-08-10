@@ -21,8 +21,6 @@ mongoose
   });
 
 const app_name = require('./package.json').name;
-const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
-
 const app = express();
 
 // Middleware Setup
@@ -30,14 +28,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(session({
-  secret: "lab-express-basic-auth",
-  cooke: { maxAge: 60000},
-  store: new MongoStore({
-    mongooseConnection: mongoose.connection,
-    ttl: 24 * 60 * 60
-  })
-}))
 
 // Express View engine setup
 
@@ -54,13 +44,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const authRoutes = require ('./routes/auth-routes');
 const createProfile = require('./routes/createProfile');
+// const planeacionDeMenu = require('./routes/planeacionDeMenu');
+// app.use('/planeacionDeMenu', planeacionDeMenu);
 
 app.use('/', authRoutes);
 app.use('/signup', createProfile);
 
 app.listen(3000);
 
-const planeacionDeMenu = require('./routes/planeacionDeMenu');
-app.use('/planeacionDeMenu', planeacionDeMenu);
+
+
 module.exports = app;
 
