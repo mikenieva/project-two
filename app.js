@@ -6,18 +6,16 @@ const logger       = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const mongoose     = require('mongoose');
-const passport     = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
 const favicon      = require('serve-favicon');
-const session      = require("express-session");
-const MongoStore   = require("connect-mongo")(session);
+const session    = require("express-session");
+const MongoStore = require("connect-mongo")(session);
 const hbs          = require('hbs');
 
-const authRoutes = require ('./routes/auth-routes');
+
 
 mongoose.Promise = Promise;
 mongoose
-  .connect(process.env.DB || 'mongodb://localhost:27017/project-two', {useNewUrlParser: true, useMongoClient: true})
+  .connect('mongodb://localhost:27017/project-two', {useNewUrlParser: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
@@ -27,11 +25,6 @@ mongoose
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
-const index = require('./routes/index');
-const contacto = require('./routes/contacto');
-const autenticacion = require('./routes/passportRoutes');
-const createProfile = require('./routes/createProfile');
-
 const app = express();
 
 // Middleware Setup
@@ -39,11 +32,14 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(require('express-session')({
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: false
-}));
+app.use(session({
+  secret: "lab-express-basic-auth",
+  cooke: { maxAge: 60000},
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection,
+    ttl: 24 * 60 * 60
+  })
+}))
 
 // Express View engine setup
 
@@ -58,22 +54,16 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
-// Passport Configuration
-const User = require('./models/User');
-passport.use(new LocalStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
 
-// Routing
-app.use('/', index);
-app.use('/contacto', contacto);
-app.use('/auth', autenticacion);
-app.use('/createProfile', createProfile);
+const authRoutes = require ('./routes/auth-routes');
+const createProfile = require('./routes/createProfile');
 
+app.use('/', authRoutes);
+app.use('/signup', createProfile);
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT);
+app.listen(3000);
 
+const planeacionDeMenu = require('./routes/planeacionDeMenu');
+app.use('/planeacionDeMenu', planeacionDeMenu);
 module.exports = app;
-
 

@@ -12,6 +12,16 @@ h2 {
 * {
   font-family: 'Do Hyeon', sans-serif; }
 
+.button {
+  position: relative;
+  overflow: hidden; }
+  .button .input {
+    position: absolute;
+    font-size: 50px;
+    opacity: 0;
+    right: 0;
+    top: 0; }
+
 .profileImage {
   margin-left: 0%;
   margin-right: 0%;

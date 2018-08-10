@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+  <title></title>
+</head>
+
+<body>
+  <div class="container" style="padding-top:0%">
+    <div class="row text-center" style="padding-top: 100px">
+      <h2 class= "text-center">Paso 1: Datos personales</h2>
+    </div>
+  </div>
+
+  <div class="container" style="padding-top:0%">
+    <div class="row">
+      <div class="col col-10 col-md-4 col-sm-4 img-thumbnail ">
+        <div class="profileImage">
+          <img class="profileImage" src="/images/blankProfile.png" width="100%" height="100%" style= "padding-top= 50%">
+        </div>
+
+        <div class="file btn btn-lg btn-primary col col-10 col-md-4 col-sm-4">
+          Upload
+          <input type="file" name="file"/>
+        </div>
+      </div>
+
+      <div class="col col-10 col-md-6 col-sm-6">
+        <form>
+          <div class="form-group">
+            <label for= "Nombre"> Nombre</label>
+            <input type="text" class="form-control" id="Nombre" aria-describedby="NombreHelp" placeholder="Chuchita">
+            <small id= "NombreHelp" class=form-text text-muted> </small>
+          </div>
+
+          <div class="form-group">
+            <label for= "Apellido"> Apellido</label>
+            <input type="text" class="form-control" id="Apellido" aria-describedby="ApellidoHelp" placeholder="Pérez">
+            <small id= "NombreHelp" class=form-text text-muted> </small>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="chuchita@labolsearon.com">
+            <small id="emailHelp" class="form-text text-muted"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">¿Qué edad tienes?</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>18-21</option>
+              <option>22-25</option>
+              <option>26-28</option>
+              <option>29-31</option>
+              <option>32-34</option>
+              <option>35-37</option>
+              <option>38-40</option>
+              <option>41-43</option>
+              <option>44-46</option>
+              <option>47-49</option>
+              <option>50-52</option>
+              <option>53-55</option>
+              <option>56-58</option>
+              <option>59-61</option>
+              <option>62-64</option>
+              <option>65-67</option>
+              <option>68-70</option>
+              <option>71-73</option>
+              <option>74-76</option>
+              <option>77-79</option>
+              <option>80-82</option>
+              <option>83-85</option>
+              <option>85-87</option>
+              <option>88-90</option>
+              <option>+90</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">¿Por qué quieres iniciar un plan de alimentación personalizado?</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>Para mejorar mi salud</option>
+              <option>Para ayudar a mi cuerpo a sanar de una enfermedad</option>
+              <option>Para complementar mi entrenamiento físico</option>
+            </select>
+            </div>
+
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Deseo recibir correos con contenido de Proyecto Sanación</label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="progress" style= "height:20px width:50% padding:10px">
+        <div class="progress-bar" role="progressbar" style="width: 16%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row text-center" style="padding-top: 100px">
+        <h2 class= "text-center">Paso 2: Preferencias alimenticias</h2>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col col-10 col-md-10 col-sm-10">
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">¿Cuántas comidas realizas al día?</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">¿A qué hora es cuando más hambre sientes?</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>A la hora del desayuno</option>
+                  <option>A la hora del almuerzo</option>
+                  <option>A la hora de la comida</option>
+                  <option>Después de la comida</option>
+                  <option>A la hora de la cena</option>
+                  <option>En la madrugada</option>
+                </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">¿Comes postre después de la comida?</label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>Sí</option>
+                    <option>Casi siempre</option>
+                    <option>Muy ocasionalmente</option>
+                    <option>No</option>
+                  </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">¿Comes entre comidas?</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>Sí</option>
+                      <option>Casi siempre</option>
+                      <option>Muy ocasionalmente</option>
+                      <option>No</option>
+                    </select>
+                    </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 33%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+        </div>
+      </div>
+
+<div class="container">
+        <div class="row text-center" style="padding-top: 100px">
+          <h2 class= "text-center">Paso 3: Cuidados especiales</h2>
+        </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col col-10 col-md-10 col-sm-10">
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">¿Eres alérgico a algún alimento?</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>Sí</option>
+                <option>No</option>
+              </select>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Especifíca cual</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">¿Eres alérgico a alguna sustancia?</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>Sí</option>
+                  <option>No</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Especifíca cual</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">¿Tienes alguna restricción alimenticia por parte de tu médico?</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>Sí</option>
+                  <option>No</option>
+                </select>
+              </div>
+
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Especifíca cual</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">¿Qué medicamentos tomas?</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">¿Presentas algunos efectos secundarios?</label>
+                      <select class="form-control" id="exampleFormControlSelect1">
+                        <option>Sí</option>
+                        <option>No</option>
+                      </select>
+                    </div>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Por favor cuéntanos de cualquier malestar crónico u ocasional que sientas</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+<div class="container">
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: 49%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+  </div>
+</div>
+
+    <div class="container">
+      <div class="row text-center" style="padding-top: 100px">
+        <h2 class= "text-center">Paso 4: Seguimiento.</h2>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col col-10 col-md-10 col-sm-10">
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">¿Cuál es tu peso actual?</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>45kg</option>
+                <option>46kg</option>
+                <option>47kg</option>
+                <option>48kg</option>
+                <option>49kg</option>
+                <option>50kg</option>
+                <option>51kg</option>
+                <option>52kg</option>
+                <option>53kg</option>
+                <option>54kg</option>
+                <option>55kg</option>
+                <option>56kg</option>
+                <option>57kg</option>
+                <option>58kg</option>
+                <option>59kg</option>
+                <option>60kg</option>
+                <option>61kg</option>
+                <option>62kg</option>
+                <option>63kg</option>
+                <option>64kg</option>
+                <option>65kg</option>
+                <option>66kg</option>
+                <option>67kg</option>
+                <option>68kg</option>
+                <option>69kg</option>
+                <option>70kg</option>
+                <option>71kg</option>
+                <option>72kg</option>
+                <option>73kg</option>
+                <option>74kg</option>
+                <option>75kg</option>
+                <option>76kg</option>
+                <option>77kg</option>
+                <option>78kg</option>
+                <option>79kg</option>
+                <option>80kg</option>
+                <option>81kg</option>
+                <option>82kg</option>
+                <option>83kg</option>
+                <option>84kg</option>
+                <option>85kg</option>
+                <option>86kg</option>
+                <option>87kg</option>
+                <option>88kg</option>
+                <option>89kg</option>
+                <option>90kg</option>
+                <option>91kg</option>
+                <option>92kg</option>
+                <option>93kg</option>
+                <option>94kg</option>
+                <option>95kg</option>
+                <option>96kg</option>
+                <option>97kg</option>
+                <option>98kg</option>
+                <option>99kg</option>
+                <option>100kg</option>
+                <option>101kg</option>
+                <option>102kg</option>
+                <option>103kg</option>
+                <option>104kg</option>
+                <option>105kg</option>
+                <option>106kg</option>
+                <option>107kg</option>
+                <option>108kg</option>
+                <option>109kg</option>
+                <option>110kg</option>
+                <option>111kg</option>
+                <option>112kg</option>
+                <option>113kg</option>
+                <option>114kg</option>
+                <option>115kg</option>
+                <option>116kg</option>
+                <option>117kg</option>
+                <option>118kg</option>
+                <option>119kg</option>
+                <option>120kg</option>
+                <option>121kg</option>
+                <option>122kg</option>
+                <option>123kg</option>
+                <option>124kg</option>
+                <option>125kg</option>
+                <option>126kg</option>
+                <option>127kg</option>
+                <option>128kg</option>
+                <option>129kg</option>
+                <option>130kg</option>
+                <option>131kg</option>
+                <option>132kg</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">¿Cuál es tu altura?</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>1.30m</option>
+                <option>1.31m</option>
+                <option>1.32m</option>
+                <option>1.33m</option>
+                <option>1.34m</option>
+                <option>1.35m</option>
+                <option>1.36m</option>
+                <option>1.37m</option>
+                <option>1.38m</option>
+                <option>1.39m</option>
+                <option>1.40m</option>
+                <option>1.41m</option>
+                <option>1.52m</option>
+                <option>1.53m</option>
+                <option>1.54m</option>
+                <option>1.55m</option>
+                <option>1.56m</option>
+                <option>1.57m</option>
+                <option>1.58m</option>
+                <option>1.59m</option>
+                <option>1.60m</option>
+                <option>1.61m</option>
+                <option>1.62m</option>
+                <option>1.63m</option>
+                <option>1.64m</option>
+                <option>1.65m</option>
+                <option>1.66m</option>
+                <option>1.67m</option>
+                <option>1.68m</option>
+                <option>1.69m</option>
+                <option>1.70m</option>
+                <option>1.71m</option>
+                <option>1.72m</option>
+                <option>1.73m</option>
+                <option>1.74m</option>
+                <option>1.75m</option>
+                <option>1.76m</option>
+                <option>1.77m</option>
+                <option>1.78m</option>
+                <option>1.79m</option>
+                <option>1.80m</option>
+                <option>1.81m</option>
+                <option>1.82m</option>
+                <option>1.83m</option>
+                <option>1.84m</option>
+                <option>1.85m</option>
+                <option>1.86m</option>
+                <option>1.87m</option>
+                <option>1.88m</option>
+                <option>1.89m</option>
+                <option>1.90m</option>
+              </select>
+            </div>
+
+            <div class="container">
+              <div class="row">
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">¿Cuál es tu IMC (índice de masa corporal)?</label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>menor de 18.5</option>
+                    <option>entre 18.5 y 24.9</option>
+                    <option>entre 25.0 y 29.9</option>
+                    <option>mayor a 30.0</option>
+                  </select>
+                </div>
+              </div>
+              </div>
+
+            <div class="container">
+              <div class="row">
+                <input type="button" class="btn btn-info" value="Calcular índice de masa corporal" onclick="location.href = 'https://www.texasheart.org/heart-health/heart-information-center/topics/calculadora-del-indice-de-masa-corporal-imc/';">
+              </div>
+            </div>
+              </div>
+
+
+              <div class="container" style="padding-top:5%">
+                <div class="row">
+                  <label for="exampleFormControlSelect1">Si tienes análisis de sangre del último mes, por favor súbelos aquí---------></label>
+                 <div class="file btn btn-lg btn-primary col col-10 col-md-4 col-sm-4">
+                  Upload
+                  <input type="file" name="file"/>
+                </div>
+                </div>
+              </div>
+
+
+          </form>
+        </div>
+      </div>
+    <div class="container">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row text-center" style="padding-top: 100px">
+        <h2 class= "text-center">Paso 5: Datos de pago y facturación </h2>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col col-10 col-md-10 col-sm-10">
+          <form>
+                <!-- CREDIT CARD FORM STARTS HERE -->
+                  <div class="panel panel-default credit-card-box">
+                    <div class="panel-heading display-table" >
+                      <div class="row display-tr" >
+                        <h3 class="panel-title display-td" >Detalles de pago</h3>
+                        <div class="display-td" >
+                          <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel-body">
+                      <form role="form" id="payment-form">
+                        <div class="row">
+                          <div class="col-xs-12">
+                            <div class="form-group">
+                              <label for="cardNumber">Número de tarjeta</label>
+                              <div class="input-group">
+                                <input
+                                type="tel"
+                                class="form-control"
+                                name="cardNumber"
+                                placeholder="Inserta un número de tarjeta válido"
+                                autocomplete="cc-number"
+                                required autofocus
+                                />
+                                <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col col-10 col-md-5 col-sm-10">
+                            <div class="form-group">
+                              <label for="cardExpiry"><span class="hidden-xs">Fecha de vencimiento</span><span class="visible-xs-inline"></span></label>
+                              <input
+                              type="tel"
+                              class="form-control"
+                              name="cardExpiry"
+                              placeholder="MM / AA"
+                              autocomplete="cc-exp"
+                              required
+                              />
+                            </div>
+                          </div>
+                          <div class="col-xs-5 col-md-5">
+                            <div class="form-group">
+                              <label for="cardCVC">Código CV</label>
+                              <input
+                              type="tel"
+                              class="form-control"
+                              name="cardCVC"
+                              placeholder="CVC"
+                              autocomplete="cc-csc"
+                              required
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-12">
+                            <div class="form-group">
+                              <label for="couponCode">Cupón</label>
+                              <input type="text" class="form-control" name="couponCode" />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row" style="display:none;">
+                          <div class="col-xs-12">
+                            <p class="payment-errors"></p>
+                          </div>
+                        </div>
+
+                      </form>
+                    </div>
+                  </div>
+                  <!-- CREDIT CARD FORM ENDS HERE -->
+                </div>
+              </div>
+            </div>
+
+            <!-- If you're using Stripe for payments -->
+            <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+          </body>
+        </form>
+      </div>
+    </div>
+  </div>
+
+    <div class="container">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+      </div>
+    </div>
+    </body>
+    </html>
+
+<div class="container">
+  <div class="row">
+    <div class="col col-offset-2 col-10 col-md-10 col-sm-10">
+      <button class="btn btn-lg btn-block" type="submit">Comenzar suscripción</button>
+    </div>
+  </div>
+</div>
