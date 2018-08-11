@@ -38,8 +38,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-
-
 // Express View engine setup
 
 app.use(require('node-sass-middleware')({
@@ -52,13 +50,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 
-const authRoutes = require ('./routes/auth-routes');
+const home = require ('./routes/home');
 const createProfile = require('./routes/createProfile');
 const profileDashboard = require('./routes/profileDashboard')
 // const planeacionDeMenu = require('./routes/planeacionDeMenu');
 // app.use('/planeacionDeMenu', planeacionDeMenu);
 
-app.use('/', authRoutes);
+app.use('/', home);
 app.use('/signup', createProfile);
 app.use('/profileDashboard', profileDashboard)
 
