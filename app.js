@@ -60,7 +60,7 @@ const planning = require('./routes/planning');
 app.use('/', home);
 app.use('/signup', createProfile);
 app.use('/profileDashboard', profileDashboard)
-app.use('/planeacionDeMenu', planning);
+app.use('/planning', planning);
 
 app.listen(process.env.PORT || 3000);
 
