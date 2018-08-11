@@ -34,9 +34,11 @@ if(app.get('env') !== 'development'){
 
 // Middleware Setup
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(bodyParser.json({type: 'application/*+json'}));
+
 
 // Express View engine setup
 
@@ -53,8 +55,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 const home = require ('./routes/home');
 const createProfile = require('./routes/createProfile');
 const profileDashboard = require('./routes/profileDashboard')
-// const planeacionDeMenu = require('./routes/planeacionDeMenu');
-// app.use('/planeacionDeMenu', planeacionDeMenu);
 
 app.use('/', home);
 app.use('/signup', createProfile);
