@@ -1,13 +1,13 @@
 const express = require('express');
-const router  = express.Router();
+const Router  = express.Router();
 
 /* GET home page */
-router.get('/', (req, res, next) => {
+Router.get('/', (req, res, next) => {
   res.render('createProfile');
 });
 
-router.post('/', (req, res, next)=>{
+Router.post('/', (req, res, next)=>{
   console.log(req.body.params);
 })
 
-module.exports = router;
+module.exports = Router;

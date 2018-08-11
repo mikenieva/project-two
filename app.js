@@ -10,7 +10,6 @@ const session    = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const hbs          = require('hbs');
 
-
 mongoose.Promise = Promise;
 mongoose
   .connect(process.env.DB || 'mongodb://localhost:27017/project-two', {useMongoClient: true})
@@ -23,18 +22,23 @@ mongoose
 const app_name = require('./package.json').name;
 const app = express();
 
+
+if(app.get('env') !== 'development'){
+  app.use(function(req, res, next) {
+    if ((req.get('X-Forwarded-Proto') !== 'https')) {
+      res.redirect('https://' + req.get('Host') + req.url);
+    } else
+      next();
+  });
+}
+
 // Middleware Setup
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use(function(req, res, next) {
-  if ((req.get('X-Forwarded-Proto') !== 'https')) {
-    res.redirect('https://' + req.get('Host') + req.url);
-  } else
-    next();
-});
+
 
 // Express View engine setup
 
@@ -50,15 +54,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const authRoutes = require ('./routes/auth-routes');
 const createProfile = require('./routes/createProfile');
+const profileDashboard = require('./routes/profileDashboard')
 // const planeacionDeMenu = require('./routes/planeacionDeMenu');
 // app.use('/planeacionDeMenu', planeacionDeMenu);
 
 app.use('/', authRoutes);
 app.use('/signup', createProfile);
-
-
-
-
+app.use('/profileDashboard', profileDashboard)
 
 app.listen(process.env.PORT || 3000);
 

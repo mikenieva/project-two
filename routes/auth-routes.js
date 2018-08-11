@@ -1,11 +1,11 @@
 const express = require('express');
-const authRoutes = express.Router();
+const Router = express.Router();
 
 
-authRoutes.get("/", (req,res,next) => {
+Router.get("/", (req,res,next) => {
     res.render('home');
 })
 
 
 
-module.exports = authRoutes;
+module.exports = Router;
