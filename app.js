@@ -54,15 +54,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const home = require ('./routes/home');
 const createProfile = require('./routes/createProfile');
-const profileDashboard = require('./routes/profileDashboard')
+const profileDashboard = require('./routes/profileDashboard');
+const planning = require('./routes/planning');
 
 app.use('/', home);
 app.use('/signup', createProfile);
 app.use('/profileDashboard', profileDashboard)
+app.use('/planeacionDeMenu', planning);
 
 app.listen(process.env.PORT || 3000);
-
-const planeacionDeMenu = require('./routes/planeacionDeMenu');
-app.use('/planeacionDeMenu', planeacionDeMenu);
 
 module.exports = app;
