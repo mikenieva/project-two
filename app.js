@@ -29,6 +29,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+app.use(function(req, res, next) {
+  if ((req.get('X-Forwarded-Proto') !== 'https')) {
+    res.redirect('https://' + req.get('Host') + req.url);
+  } else
+    next();
+});
+
 // Express View engine setup
 
 app.use(require('node-sass-middleware')({
@@ -41,7 +48,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 const authRoutes = require ('./routes/auth-routes');
 const createProfile = require('./routes/createProfile');
 // const planeacionDeMenu = require('./routes/planeacionDeMenu');
@@ -50,9 +56,10 @@ const createProfile = require('./routes/createProfile');
 app.use('/', authRoutes);
 app.use('/signup', createProfile);
 
+
+
+
+
 app.listen(process.env.PORT || 3000);
 
-
-
 module.exports = app;
-
