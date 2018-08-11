@@ -62,4 +62,7 @@ app.use('/profileDashboard', profileDashboard)
 
 app.listen(process.env.PORT || 3000);
 
+const planeacionDeMenu = require('./routes/planeacionDeMenu');
+app.use('/planeacionDeMenu', planeacionDeMenu);
+
 module.exports = app;
