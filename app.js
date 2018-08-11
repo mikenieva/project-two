@@ -65,4 +65,5 @@ app.use('/createProfile', createProfile);
 
 const planeacionDeMenu = require('./routes/planeacionDeMenu');
 app.use('/planeacionDeMenu', planeacionDeMenu);
+
 module.exports = app;
