@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const express      = require('express');
 const path         = require('path');
 const logger       = require('morgan');
@@ -9,6 +7,9 @@ const mongoose     = require('mongoose');
 const session    = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const hbs          = require('hbs');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const paypal = require('paypal-rest-sdk');
 
 mongoose.Promise = Promise;
 mongoose
@@ -21,6 +22,7 @@ mongoose
 
 const app_name = require('./package.json').name;
 const app = express();
+
 
 
 if(app.get('env') !== 'development'){
@@ -39,6 +41,16 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json({type: 'application/*+json'}));
 
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+paypal.configure({
+  'mode': 'sandbox', //sandbox or live
+  'client_id': 'ARP20GbcYICNmdyHFdWhbYsb440aEGquGZTbUlomI0goM1w0EfAPpjvcwylsTnscmEjWbWGmagvhtu3N',
+  'client_secret': 'EMkBucynjt5wCKiHBzFbyprXpePSCZBkzf7T-Q9Nt73SyzBEaAqgDqoSXVH47qcWL0y4Uzt10asCq9UT'
+});
 
 // Express View engine setup
 

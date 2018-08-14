@@ -36,13 +36,19 @@
 
           <div class="form-group">
             <label for= "Apellido"> Apellido</label>
-            <input type="text" class="form-control" id="Apellido" aria-describedby="ApellidoHelp" placeholder="Pérez" name="Apellido">
+            <input type="text" class="form-control" id="Apellido" placeholder="Pérez" name="Apellido">
             <small id= "NombreHelp" class="form-text text-muted"></small>
           </div>
 
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="chuchita@labolsearon.com" name="Email">
+            <input type="email" class="form-control" placeholder="chuchita@labolsearon.com" name="Email">
+            <small id="emailHelp" class="form-text text-muted"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Password</label>
+            <input type="email" class="form-control" placeholder="7 caracteres mínimo" name="Password">
             <small id="emailHelp" class="form-text text-muted"></small>
           </div>
 
@@ -87,94 +93,61 @@
           </div>
 
             <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" name="Newsletter">
               <label class="form-check-label" for="exampleCheck1">Deseo recibir correos con contenido de Proyecto Sanación</label>
             </div>
-
-            <input value="Enviar" type="submit"></input>
-          </form>
         </div>
       </div>
-    </div>
-
-    <div class="container">
-      <div class="progress" style= "height:20px width:50% padding:10px">
-        <div class="progress-bar" role="progressbar" style="width: 16%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-      </div>
-    </div>
-
-    <div class="container">
+    
       <div class="row text-center" style="padding-top: 100px">
         <h2 class= "text-center">Paso 2: Preferencias alimenticias</h2>
       </div>
-    </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col col-10 col-md-10 col-sm-10">
-          <form>
+    
+      <div class="col col-10 col-md-10 col-sm-10">          
             <div class="form-group">
               <label for="exampleFormControlSelect1">¿Cuántas comidas realizas al día?</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
               </div>
 
               <div class="form-group">
                 <label for="exampleFormControlSelect1">¿A qué hora es cuando más hambre sientes?</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                  <option>A la hora del desayuno</option>
-                  <option>A la hora del almuerzo</option>
-                  <option>A la hora de la comida</option>
-                  <option>Después de la comida</option>
-                  <option>A la hora de la cena</option>
-                  <option>En la madrugada</option>
-                </select>
-                </div>
-
-                <div class="form-group">
-                  <label for="exampleFormControlSelect1">¿Comes postre después de la comida?</label>
                   <select class="form-control" id="exampleFormControlSelect1">
-                    <option>Sí</option>
-                    <option>Casi siempre</option>
-                    <option>Muy ocasionalmente</option>
-                    <option>No</option>
+                    <option>A la hora del desayuno</option>
+                    <option>A la hora del almuerzo</option>
+                    <option>A la hora de la comida</option>
+                    <option>Después de la comida</option>
+                    <option>A la hora de la cena</option>
+                    <option>En la madrugada</option>
                   </select>
-                  </div>
+              </div>
 
-                  <div class="form-group">
-                    <label for="exampleFormControlSelect1">¿Comes entre comidas?</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                      <option>Sí</option>
-                      <option>Casi siempre</option>
-                      <option>Muy ocasionalmente</option>
-                      <option>No</option>
-                    </select>
-                    </div>
-            </form>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">¿Comes postre después de la comida?</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>Sí</option>
+                  <option>Casi siempre</option>
+                  <option>Muy ocasionalmente</option>
+                  <option>No</option>
+                </select>
+              </div>
+
+          <div class="form-group">
+              <label for="exampleFormControlSelect1">¿Comes entre comidas?</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+              <option>Sí</option>
+              <option>Casi siempre</option>
+              <option>Muy ocasionalmente</option>
+              <option>No</option>
+            </select>
           </div>
         </div>
-      </div>
-
-      <div class="container">
-        <div class="progress">
-          <div class="progress-bar" role="progressbar" style="width: 33%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-        </div>
-      </div>
-
-    <div class="container">
-        <div class="row text-center" style="padding-top: 100px">
-          <h2 class= "text-center">Paso 3: Cuidados especiales</h2>
-        </div>
-    </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col col-10 col-md-10 col-sm-10">
-          <form>
+    <h2 class="text-center">Paso 3: Cuidados especiales</h2>
+      <div class="col col-10 col-md-10 col-sm-10">
             <div class="form-group">
               <label for="exampleFormControlSelect1">¿Eres alérgico a algún alimento?</label>
               <select class="form-control" id="exampleFormControlSelect1">
@@ -228,28 +201,18 @@
                   <div class="form-group">
                     <label for="exampleFormControlTextarea1">Por favor cuéntanos de cualquier malestar crónico u ocasional que sientas</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+                </div>
+            </div>
 
-            </form>
-          </div>
-        </div>
-      </div>
 
-<div class="container">
-  <div class="progress">
-    <div class="progress-bar" role="progressbar" style="width: 49%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
-  </div>
-</div>
-
-    <div class="container">
-      <div class="row text-center" style="padding-top: 100px">
-        <h2 class= "text-center">Paso 4: Seguimiento.</h2>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row">
+      
+      
+      
+    <h2 class= "text-center">Paso 4: Seguimiento.</h2>
+      
+  
         <div class="col col-10 col-md-10 col-sm-10">
-          <form>
             <div class="form-group">
               <label for="exampleFormControlSelect1">¿Cuál es tu peso actual?</label>
               <select class="form-control" id="exampleFormControlSelect1">
@@ -401,151 +364,24 @@
               </select>
             </div>
 
-            <div class="container">
-              <div class="row">
-                <div class="form-group">
-                  <label for="exampleFormControlSelect1">¿Cuál es tu IMC (índice de masa corporal)?</label>
-                  <select class="form-control" id="exampleFormControlSelect1">
-                    <option>menor de 18.5</option>
-                    <option>entre 18.5 y 24.9</option>
-                    <option>entre 25.0 y 29.9</option>
-                    <option>mayor a 30.0</option>
-                  </select>
-                </div>
-              </div>
-              </div>
-
-            <div class="container">
-              <div class="row">
-                <input type="button" class="btn btn-info" value="Calcular índice de masa corporal" onclick="location.href = 'https://www.texasheart.org/heart-health/heart-information-center/topics/calculadora-del-indice-de-masa-corporal-imc/';">
-              </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">¿Cuál es tu IMC (índice de masa corporal)?</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>menor de 18.5</option>
+                  <option>entre 18.5 y 24.9</option>
+                  <option>entre 25.0 y 29.9</option>
+                  <option>mayor a 30.0</option>
+                </select>
             </div>
-              </div>
-
-
-              <div class="container" style="padding-top:5%">
-                <div class="row">
-                  <label for="exampleFormControlSelect1"></label>
-                 <div class="file btn btn-lg btn-primary col col-10 col-md-4 col-sm-4">
-                  Upload
-                  <input type="file" name="file"/>
-                </div>
-                </div>
-              </div>
-
-
-          </form>
         </div>
-      </div>
-    <div class="container">
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row text-center" style="padding-top: 100px">
-        <h2 class= "text-center">Paso 5: Datos de pago y facturación </h2>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col col-10 col-md-10 col-sm-10">
-          <form>
-                  <div class="panel panel-default credit-card-box">
-                    <div class="panel-heading display-table" >
-                      <div class="row display-tr" >
-                        <h3 class="panel-title display-td" >Detalles de pago</h3>
-                        <div class="display-td" >
-                          <img class="img-responsive pull-right" src="https://i76.imgup.net/accepted_c22e0.png">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="panel-body">
-                      <form role="form" id="payment-form">
-                        <div class="row">
-                          <div class="col-xs-12">
-                            <div class="form-group">
-                              <label for="cardNumber">Número de tarjeta</label>
-                              <div class="input-group">
-                                <input
-                                type="tel"
-                                class="form-control"
-                                name="cardNumber"
-                                placeholder="Inserta un número de tarjeta válido"
-                                autocomplete="cc-number"
-                                required autofocus
-                                />
-                                <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col col-10 col-md-5 col-sm-10">
-                            <div class="form-group">
-                              <label for="cardExpiry"><span class="hidden-xs">Fecha de vencimiento</span><span class="visible-xs-inline"></span></label>
-                              <input
-                              type="tel"
-                              class="form-control"
-                              name="cardExpiry"
-                              placeholder="MM / AA"
-                              autocomplete="cc-exp"
-                              required
-                              />
-                            </div>
-                          </div>
-                          <div class="col-xs-5 col-md-5">
-                            <div class="form-group">
-                              <label for="cardCVC">Código CV</label>
-                              <input
-                              type="tel"
-                              class="form-control"
-                              name="cardCVC"
-                              placeholder="CVC"
-                              autocomplete="cc-csc"
-                              required
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-xs-12">
-                            <div class="form-group">
-                              <label for="couponCode">Cupón</label>
-                              <input type="text" class="form-control" name="couponCode" />
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="row" style="display:none;">
-                          <div class="col-xs-12">
-                            <p class="payment-errors"></p>
-                          </div>
-                        </div>
-
-                      </form>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>
-
-    <div class="container">
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
-      </div>
-    </div>
-
-<div class="container">
-  <div class="row">
-    <div class="col col-offset-2 col-10 col-md-10 col-sm-10">
-      <button class="btn btn-lg btn-block" type="submit">Comenzar suscripción</button>
+          <input value="Enviar" type="submit"></input>
+      </form>
     </div>
   </div>
 </div>
