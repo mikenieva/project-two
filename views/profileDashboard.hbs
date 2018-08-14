@@ -387,7 +387,7 @@
 paypal.Button.render({
   env: 'sandbox',
   client: {
-    sandbox: 'demo_sandbox_client_id'
+    sandbox: process.env.PAYPALCLIENTID
   },
   style: {
     color: 'gold',   // 'gold, 'blue', 'silver', 'black'
