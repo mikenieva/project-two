@@ -1,3 +1,5 @@
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
 <div>
     <h1>{{user.name}} {{user.lastname}} </h1>
     <p>{{user.email}}</p>
@@ -58,7 +60,7 @@
       <div class="col col-10 col-md-10 col-sm-10">
         <h3>¿A partir de que fecha deseas recibir tu plan de alimentos personalizado?</h3>
       </div>
-    </div>
+      </div>
 
 
       <div class="row">
@@ -380,9 +382,6 @@
     <button id="paypal-button">
         Adquiere la suscripción
     </button>
-
-
-
 
 <script>
 paypal.Button.render({

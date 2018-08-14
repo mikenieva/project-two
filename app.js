@@ -14,8 +14,9 @@ const paypal = require('paypal-rest-sdk');
 
 paypal.configure({
   mode: 'sandbox', // Sandbox or live
-  client_id: 'ARP20GbcYICNmdyHFdWhbYsb440aEGquGZTbUlomI0goM1w0EfAPpjvcwylsTnscmEjWbWGmagvhtu3N',
-  client_secret: 'EMkBucynjt5wCKiHBzFbyprXpePSCZBkzf7T-Q9Nt73SyzBEaAqgDqoSXVH47qcWL0y4Uzt10asCq9UT'});
+  client_id: process.env.PAYPALCLIENTID,
+  client_secret: process.env.PAYPALSECRET 
+});
 
 
 mongoose.Promise = Promise;
