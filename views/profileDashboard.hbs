@@ -1,0 +1,61 @@
+<div>
+    <h1>{{user.name}} {{user.lastname}} </h1>
+    <p>{{user.email}}</p>
+    <b>Rango de Edad: </b><p>{{user.age}}</p>
+    <b>Altura: </b><p>{{user.altura}}</p>
+    <b>Peso: </b><p>{{user.peso}}</p>
+    <b>Motivo de superación: </b><p>{{user.reason}}</p>
+    <br>
+    <br>
+    <br>
+    <h3>Tu tabla de nutrición </h3>
+    <table class="table">
+  <tbody>
+    <tr>
+      <th scope="row">Número de Comidas al día</th>
+      <td>{{user.numComidas}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Momento del día con más hambre</th>
+      <td>{{user.hrHambre}}</td>
+    </tr>
+    <tr>
+      <th scope="row">¿Comes entre comidas?</th>
+      <td>{{user.comerEntreComida}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Postre después de la comida</th>
+      <td>{{user.postre}}</td>
+    </tr>
+    <tr>
+      <th scope="row">¿Tienes alergias?</th>
+      <td>{{user.alergia}}</td>
+    </tr>
+    <tr>
+      <th scope="row">En caso de que sí, ¿cuáles alergias?</th>
+      <td>{{user.cualAlergia}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Restricción Alimenticia</th>
+      <td>{{user.restriccionAlimenticia}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<div>
+<br>
+<br>
+<br>
+<h1>Suscríbete a nuestras entregas a domicilio </h1>
+    <p>Rango de fechas de tu pedido</p>
+    Desde:
+    <input type="date">
+    Hasta:
+    <input type="date">
+    
+    <button>
+        Adquiere la suscripción
+    </button>
+</div>

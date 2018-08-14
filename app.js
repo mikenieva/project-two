@@ -12,6 +12,12 @@ const LocalStrategy = require('passport-local').Strategy;
 const paypal = require('paypal-rest-sdk');
 
 
+paypal.configure({
+  mode: 'sandbox', // Sandbox or live
+  client_id: 'ARP20GbcYICNmdyHFdWhbYsb440aEGquGZTbUlomI0goM1w0EfAPpjvcwylsTnscmEjWbWGmagvhtu3N',
+  client_secret: 'EMkBucynjt5wCKiHBzFbyprXpePSCZBkzf7T-Q9Nt73SyzBEaAqgDqoSXVH47qcWL0y4Uzt10asCq9UT'});
+
+
 mongoose.Promise = Promise;
 mongoose
   .connect(process.env.DB || 'mongodb://localhost:27017/project-two', {useMongoClient: true})
@@ -23,7 +29,6 @@ mongoose
 
 const app_name = require('./package.json').name;
 const app = express();
-
 
 
 if(app.get('env') !== 'development'){
