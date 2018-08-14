@@ -10,8 +10,6 @@ Router.get('/', (req, res, next) => {
 
 Router.post('/', (req, res, next)=>{ 
 
-  console.log(req.body);
-
   const email = req.body.Email;
   const password = req.body.Password;
   const name = req.body.Nombre;
