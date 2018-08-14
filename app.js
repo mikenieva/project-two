@@ -11,6 +11,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const paypal = require('paypal-rest-sdk');
 
+
 mongoose.Promise = Promise;
 mongoose
   .connect(process.env.DB || 'mongodb://localhost:27017/project-two', {useMongoClient: true})
@@ -45,6 +46,15 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret: "project-two",
+  cooke: { maxAge: 60000},
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection,
+    ttl: 24 * 60 * 60
+  })
+}))
+
 
 paypal.configure({
   'mode': 'sandbox', //sandbox or live
@@ -67,12 +77,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 const home = require ('./routes/home');
 const createProfile = require('./routes/createProfile');
 const profileDashboard = require('./routes/profileDashboard');
-const planning = require('./routes/planning');
 
 app.use('/', home);
 app.use('/signup', createProfile);
 app.use('/profileDashboard', profileDashboard)
-app.use('/planning', planning);
 
 app.listen(process.env.PORT || 3000);
 

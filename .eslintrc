@@ -1,11 +1,5 @@
 {
     "plugins": [
         "hbs"
-    ],
-    "rules": {
-        'hbs/check-hbs-template-literals': [
-          'error', 2,
-          {'ConfigFile': __dirname + '/.eslint-template-lintrc.json'}
-        ],
-    }
+    ]
 }
