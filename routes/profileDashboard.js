@@ -5,4 +5,4 @@ Router.get('/', (req, res, next) => {
     res.render('profileDashboard')
 })
 
-module.exports = Router
+module.exports = Router;

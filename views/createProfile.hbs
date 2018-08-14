@@ -20,13 +20,16 @@
           <img class="profileImage" src="/images/blankProfile.png" width="100%" height="100%" style= "padding-top= 50%">
         </div>
 
-        <div class="file btn btn-lg btn-primary col col-10 col-md-4 col-sm-4">
-          Upload
-          <input type="file" name="file"/>
-        </div>
+        <input type="file" name="file" class="file btn btn-lg btn-primary col col-10 col-md-5 col-sm-4" value=""/>
+        
       </div>
       
       <div class="col col-10 col-md-6 col-sm-6">
+
+        {{#if errorMessage}}
+          <div style="color: red;" class="error-message">{{ errorMessage }}</div>
+        {{/if}}
+
         <form action="/signup" method="POST" id="personalData" enctype="application/x-www-form-urlencoded">
           <div class="form-group">
             <label for= "Nombre"> Nombre</label>
@@ -48,7 +51,7 @@
 
           <div class="form-group">
             <label for="exampleInputEmail1">Password</label>
-            <input type="email" class="form-control" placeholder="7 caracteres mínimo" name="Password">
+            <input type="password" class="form-control" placeholder="7 caracteres mínimo" name="Password">
             <small id="emailHelp" class="form-text text-muted"></small>
           </div>
 
@@ -106,7 +109,7 @@
       <div class="col col-10 col-md-10 col-sm-10">          
             <div class="form-group">
               <label for="exampleFormControlSelect1">¿Cuántas comidas realizas al día?</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="exampleFormControlSelect1" name="Comidas">
                   <option>2</option>
                   <option>3</option>
                   <option>4</option>
@@ -116,7 +119,7 @@
 
               <div class="form-group">
                 <label for="exampleFormControlSelect1">¿A qué hora es cuando más hambre sientes?</label>
-                  <select class="form-control" id="exampleFormControlSelect1">
+                  <select class="form-control" id="exampleFormControlSelect1" name="Horahambre">
                     <option>A la hora del desayuno</option>
                     <option>A la hora del almuerzo</option>
                     <option>A la hora de la comida</option>
@@ -128,7 +131,7 @@
 
               <div class="form-group">
                 <label for="exampleFormControlSelect1">¿Comes postre después de la comida?</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="exampleFormControlSelect1" name="Postre">
                   <option>Sí</option>
                   <option>Casi siempre</option>
                   <option>Muy ocasionalmente</option>
@@ -138,7 +141,7 @@
 
           <div class="form-group">
               <label for="exampleFormControlSelect1">¿Comes entre comidas?</label>
-              <select class="form-control" id="exampleFormControlSelect1">
+              <select class="form-control" id="exampleFormControlSelect1" name="Entrecomida">
               <option>Sí</option>
               <option>Casi siempre</option>
               <option>Muy ocasionalmente</option>
@@ -150,7 +153,7 @@
       <div class="col col-10 col-md-10 col-sm-10">
             <div class="form-group">
               <label for="exampleFormControlSelect1">¿Eres alérgico a algún alimento?</label>
-              <select class="form-control" id="exampleFormControlSelect1">
+              <select class="form-control" id="exampleFormControlSelect1" name="Alergias">
                 <option>Sí</option>
                 <option>No</option>
               </select>
@@ -158,12 +161,12 @@
 
               <div class="form-group">
                 <label for="exampleFormControlTextarea1">Especifíca cual</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="cualAlergia"></textarea>
               </div>
 
               <div class="form-group">
                 <label for="exampleFormControlSelect1">¿Eres alérgico a alguna sustancia?</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="exampleFormControlSelect1" name="cualAlergiaSustancia">
                   <option>Sí</option>
                   <option>No</option>
                 </select>
@@ -171,12 +174,12 @@
 
               <div class="form-group">
                 <label for="exampleFormControlTextarea1">Especifíca cual</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="restriccionAlimenticia"></textarea>
               </div>
 
               <div class="form-group">
                 <label for="exampleFormControlSelect1">¿Tienes alguna restricción alimenticia por parte de tu médico?</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="exampleFormControlSelect1" name="cualRestriccionAlimenticia">
                   <option>Sí</option>
                   <option>No</option>
                 </select>
@@ -188,11 +191,11 @@
 
                   <div class="form-group">
                     <label for="exampleFormControlTextarea1">¿Qué medicamentos tomas?</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" name="medicamentos"></textarea>
 
                     <div class="form-group">
                       <label for="exampleFormControlSelect1">¿Presentas algunos efectos secundarios?</label>
-                      <select class="form-control" id="exampleFormControlSelect1">
+                      <select class="form-control" id="exampleFormControlSelect1" name="efectosSecundarios">
                         <option>Sí</option>
                         <option>No</option>
                       </select>
@@ -200,22 +203,16 @@
 
                   <div class="form-group">
                     <label for="exampleFormControlTextarea1">Por favor cuéntanos de cualquier malestar crónico u ocasional que sientas</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="malestarCronico"></textarea>
                   </div>
                 </div>
             </div>
 
-
-      
-      
-      
-    <h2 class= "text-center">Paso 4: Seguimiento.</h2>
-      
-  
+      <h2 class= "text-center">Paso 4: Seguimiento.</h2>
         <div class="col col-10 col-md-10 col-sm-10">
             <div class="form-group">
               <label for="exampleFormControlSelect1">¿Cuál es tu peso actual?</label>
-              <select class="form-control" id="exampleFormControlSelect1">
+              <select class="form-control" id="exampleFormControlSelect1" name="peso">
                 <option>45kg</option>
                 <option>46kg</option>
                 <option>47kg</option>
@@ -309,7 +306,7 @@
 
             <div class="form-group">
               <label for="exampleFormControlSelect1">¿Cuál es tu altura?</label>
-              <select class="form-control" id="exampleFormControlSelect1">
+              <select name="altura" class="form-control" id="exampleFormControlSelect1">
                 <option>1.30m</option>
                 <option>1.31m</option>
                 <option>1.32m</option>
@@ -366,21 +363,21 @@
 
             <div class="form-group">
                 <label for="exampleFormControlSelect1">¿Cuál es tu IMC (índice de masa corporal)?</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="exampleFormControlSelect1" name="imc">
                   <option>menor de 18.5</option>
                   <option>entre 18.5 y 24.9</option>
                   <option>entre 25.0 y 29.9</option>
                   <option>mayor a 30.0</option>
                 </select>
             </div>
-        </div>
-              </div>
             </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-          <input value="Enviar" type="submit"></input>
+      <input value="Enviar" type="submit"></input>
       </form>
     </div>
   </div>
